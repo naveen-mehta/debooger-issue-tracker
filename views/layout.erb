@@ -10,20 +10,20 @@
 <body>
   <div>
     <ul class="navigation">
-      <li class="navigation-links"><a href="#home">Debooger / Logo Space</a></li>
-      <li class="navigation-links"><a href="#news">Log out</a></li>
+      <li class="nav-links logo"><a href="/">Debooger / Logo Space</a></li>
+      <li class="nav-links"><a class="logout-btn" href="#">Log out</a></li>
     </ul>
   </div>
   
   <div class="sidebar">
-    <a href="#home"><i class="fa fa-fw fa-columns"></i> Dashboard</a>
-    <a href="#services"><i class="fa fa-fw fa-code"></i> Projects</a>
-    <a href="#clients"><i class="fa fa-fw fa-bug"></i> Bugs</a>
-    <a href="#contact"><i class="fa fa-fw fa-users"></i> Users</a>
+    <a href=""><i class="fa fa-fw fa-columns"></i> Dashboard</a>
+    <a href=""><i class="fa fa-fw fa-code"></i> Projects</a>
+    <a href=""><i class="fa fa-fw fa-bug"></i> Issues</a>
+    <a href=""><i class="fa fa-fw fa-users"></i> Users</a>
   </div>
   
   <main>
-    <%= yield %>
+   <%= yield %>
   </main>
   
 </body>

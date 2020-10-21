@@ -17,20 +17,27 @@ main {
     background-color: #f3f3f3;
 }
   
-li {
+.logo {
     float: left;
 }
 
-li a {
+.nav-links a {
     display: block;
-    color: rgb(100, 70, 70);
+    color: rgb(48, 47, 47);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: #ddd;
+.logout-btn {
+    float: right;
+    background: rgba(11, 21, 169, 0.92);
+    color: whitesmoke !important;
+}
+
+.nav-links a:hover {
+    background-color: rgba(2, 23, 74, 0.646);
+    color: whitesmoke;
 }
 
 /* Sidebar */
