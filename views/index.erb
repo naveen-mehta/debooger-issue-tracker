@@ -1,5 +1,17 @@
-<h3>Total projects: <%= projects.count %> </h3>
-<h3>Total issues: <%= issues.count %> </h3>
-<h3>In progress: </h3>
-<h3>Completed: </h3>
+<div>
+    <h1>Project Summary</h1>
+    <h3>Total projects: <%= all_projects.count %> </h3>
+    <h3>New: <%= new_projects.count %></h3>
+    <h3>In progress: <%= inprogress_projects.count %> </h3>
+    <h3>Closed: <%= closed_projects.count %></h3>
+</div>
+
+<div>
+    <h1>Issue Summary</h1>
+    <h3>Total issues: <%= all_issues.count %> </h3>
+    <h3>New: <%= new_issues.count %></h3>
+    <h3>In progress: <%= inprogress_issues.count %></h3>
+    <h3>Closed: <%= closed_issues.count %></h3>
+</div>
+
 
