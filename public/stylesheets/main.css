@@ -1,38 +1,60 @@
-/* Style the sidebar - fixed full height */
+/* Page content */
+
+main {
+    margin-left: 220px; 
+    padding: 0px 10px;
+}
+
+/* Navigation */
+
+.navigation {
+    z-index: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+  
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(100, 70, 70);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #ddd;
+}
+
+/* Sidebar */
+
 .sidebar {
     height: 100%;
-    width: 160px;
+    width: 200px;
     position: fixed;
-    z-index: 1;
-    top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgba(11, 21, 169, 0.92);
     overflow-x: hidden;
-    padding-top: 16px;
-  }
+    padding-top: 70px;
+}
   
-  /* Style sidebar links */
-  .sidebar a {
+.sidebar a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
-    color: #818181;
+    color: whitesmoke;
     display: block;
-  }
+}
+
+.sidebar a:hover {
+    color: #8f8b8b;
+}
+    
   
-  /* Style links on mouse-over */
-  .sidebar a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Style the main content */
-  .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    padding: 0px 10px;
-  }
-  
-  /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }

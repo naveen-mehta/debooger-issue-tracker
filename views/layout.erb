@@ -2,19 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Debooger</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <div>
+    <ul class="navigation">
+      <li class="navigation-links"><a href="#home">Debooger / Logo Space</a></li>
+      <li class="navigation-links"><a href="#news">Log out</a></li>
+    </ul>
+  </div>
+  
   <div class="sidebar">
     <a href="#home"><i class="fa fa-fw fa-columns"></i> Dashboard</a>
     <a href="#services"><i class="fa fa-fw fa-code"></i> Projects</a>
     <a href="#clients"><i class="fa fa-fw fa-bug"></i> Bugs</a>
     <a href="#contact"><i class="fa fa-fw fa-users"></i> Users</a>
   </div>
-  <%= yield %>
-
+  
+  <main>
+    <%= yield %>
+  </main>
+  
 </body>
 </html>
