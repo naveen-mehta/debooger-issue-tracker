@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div>
+  <header>
     <ul class="navigation">
       <li class="nav-links logo"><a href="/" class="fa fa-bug">  Debooger</a></li>
       <li class="nav-links"><a class="logout-btn" href="#">Log out</a></li>
       <li class="nav-links"><a class="nav-add-proj-btn" href="#">Add Project</a></li>
-      <li class="nav-links"><a class="nav-add-issue-btn" href="issues/new">Add Issue</a></li>
+      <li class="nav-links"><a class="nav-add-issue-btn" href="/issues/new">Add Issue</a></li>
 
     </ul>
-  </div>
+  </header>
   
   <div class="sidebar">
     <a href=""><i class="fa fa-fw fa-columns"></i> Dashboard</a>
@@ -25,9 +25,9 @@
     <a href=""><i class="fa fa-fw fa-users"></i> Users</a>
   </div>
   
-  <main>
+
    <%= yield %>
-  </main>
+
   
 </body>
 </html>

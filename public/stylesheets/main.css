@@ -1,27 +1,19 @@
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
 body {
     font-family: 'Nunito', sans-serif;
     color: #384047;
 }
 
-/* Page content */
-
-main {
-    margin-left: 220px; 
-    padding: 0px 10px;
-}
-
 /* Navigation */
 
-.navigation {
+header {
+    height: 5%;
+    width: 100%;
+    position: fixed;
     z-index: 1;
+}
+
+.navigation {
     list-style-type: none;
     margin: 0 -7px;
     padding: 5px;
@@ -75,6 +67,7 @@ main {
 /* Sidebar */
 
 .sidebar {
+    margin-top: 63px;
     height: 100%;
     width: 200px;
     position: fixed;
@@ -97,11 +90,14 @@ main {
 }
     
 /* Issues - new issue form */
+.issue-form {
+    padding-top: 90px;
+}
 
 form {
   max-width: 300px;
   margin: 10px auto;
-  padding: 10px 20px;
+  padding: 10px 50px 10px 20px;
   background: #f4f7f8;
   border-radius: 8px;
 }
@@ -122,7 +118,7 @@ select {
   background-color: #e8eeef;
   color: #8a97a0;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 input[type="radio"] {
@@ -130,6 +126,7 @@ input[type="radio"] {
 }
 
 select {
+  width: 260px;  
   padding: 6px;
   height: 32px;
   border-radius: 2px;
@@ -143,11 +140,12 @@ select {
   text-align: center;
   font-style: normal;
   border-radius: 5px;
-  width: 100%;
+  width: 30%;
   border: 1px solid #3ac162;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-left: 14px;
 }
 
 fieldset {
@@ -195,9 +193,15 @@ label.light {
     padding: 10px;
 }
 
-/* Issues */
+/* All issues page */
 
 .table {
-    margin-top: 2%;
-    width: 98% !important;
+    margin-top: 100px;
+    width: 95% !important;
 }
+
+.fixed-table-container {
+    margin-left: 220px;
+    /* margin-top: 100px; */
+}
+
