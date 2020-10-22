@@ -88,7 +88,13 @@ header {
 .sidebar a:hover {
     color: #8f8b8b;
 }
-    
+
+/* Dashboard */
+
+.dashboard {
+    padding: 100px 10px 10px 220px;
+}
+
 /* Issues - new issue form */
 .issue-form {
     padding-top: 90px;

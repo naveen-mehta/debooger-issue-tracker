@@ -33,7 +33,7 @@ end
 
 post '/issues' do
   create_new_issue(params["issue_title"], params["issue_description"], params["project_id"], params["issue_status"], params["submitted_by"])
-  redirect '/'
+  redirect '/issues'
 end
 
 get '/issues' do
@@ -41,5 +41,16 @@ get '/issues' do
   erb :all_issues, locals: { all_issues: all_issues }
 end
 
+get '/projects/new' do
+  erb :create_project
+end
 
+get '/projects' do
+  all_projects = fetch_all_projects
+  erb :all_projects, locals: { all_projects: all_projects }
+end
 
+post '/projects' do
+  create_new_project(params["project_title"], params["project_description"], params["project_status"], params["project_owner"], params["submitted_by"])
+  redirect '/projects'
+end
