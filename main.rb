@@ -31,7 +31,10 @@ get '/issues/new' do
   erb :create_issue
 end
 
-
+post '/issues' do
+  create_new_issue(params["issue_title"], params["issue_description"], params["project_id"], params["issue_status"], params["submitted_by"])
+  redirect '/'
+end
 
 
 

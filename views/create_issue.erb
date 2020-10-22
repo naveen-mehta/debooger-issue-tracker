@@ -1,4 +1,4 @@
-<form action="/issues/new" method="post">
+<form action="/issues" method="post">
     <h1 class="form-heading">Create a new issue</h1>
     <fieldset>
         <legend><span class="number">1</span>Describe the issue</legend>
@@ -13,7 +13,7 @@
     </fieldset>
     <fieldset>
         <legend><span class="number">2</span> Additional information</legend>
-        <label for="status">Status</label>
+        <label for="status">Status:</label>
         <select id="status" name="issue_status">
                 <option value="new">New</option>
                 <option value="in-progress">In Progress</option>
@@ -21,6 +21,8 @@
         </select>
         <label for="id">Provide the Project ID to link the issue:</label>
         <input type="number" id="id" name="project_id">
+        <label for="submitter">Submitted by:</label>
+        <input type="text" id="submitter" name="submitted_by">
     </fieldset>
     <button type="submit" class="issueform-submitbtn">Submit</button>
 </form>

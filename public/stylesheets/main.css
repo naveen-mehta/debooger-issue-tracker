@@ -23,34 +23,53 @@ main {
 .navigation {
     z-index: 1;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0 -7px;
+    padding: 5px;
     overflow: hidden;
-    border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
 }
   
 .logo {
     float: left;
+    margin: 0.5% 0% 0.5% 0%;
+    font-size: 20px;
 }
 
 .nav-links a {
     display: block;
     color: rgb(48, 47, 47);
     text-align: center;
-    padding: 14px 16px;
+    padding: 9px 16px;
     text-decoration: none;
 }
 
 .logout-btn {
     float: right;
-    background: rgba(11, 21, 169, 0.92);
+    background: rgb(224 134 1);;
     color: whitesmoke !important;
+    margin: 0.5% 2% 0.5% 0%;
+    border-radius: 5px;
 }
 
 .nav-links a:hover {
     background-color: rgba(2, 23, 74, 0.646);
     color: whitesmoke;
+}
+
+.nav-add-proj-btn {
+    float: left;
+    background:#4bc970;
+    color: whitesmoke !important;
+    margin: 0.5% 1% 0.5% 99px;
+    border-radius: 5px;
+}
+
+.nav-add-issue-btn {
+    float: left;
+    background:#4bc970;
+    color: whitesmoke !important;
+    margin: 0.5% 0% 0.5% 0.5%;
+    border-radius: 5px;
 }
 
 /* Sidebar */

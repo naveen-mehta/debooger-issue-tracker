@@ -37,3 +37,6 @@ def fetch_projects_new
     run_sql("SELECT * FROM projects WHERE project_status = 'new';")
 end
 
+def create_new_issue(title, description, project_id, status, submitted_by)
+    run_sql("INSERT INTO issues (issue_name, issue_description, project_id, issue_status, submitted_by) VALUES ('#{title}', '#{description}', #{project_id}, '#{status}', '#{submitted_by}');")
+end
