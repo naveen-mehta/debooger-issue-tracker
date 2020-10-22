@@ -194,3 +194,10 @@ label.light {
     color: #505254;
     padding: 10px;
 }
+
+/* Issues */
+
+.table {
+    margin-top: 2%;
+    width: 98% !important;
+}

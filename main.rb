@@ -36,7 +36,10 @@ post '/issues' do
   redirect '/'
 end
 
-
+get '/issues' do
+  all_issues = fetch_all_issues
+  erb :all_issues, locals: { all_issues: all_issues }
+end
 
 
 
