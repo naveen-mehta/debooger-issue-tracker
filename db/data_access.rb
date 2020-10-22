@@ -36,3 +36,4 @@ end
 def fetch_projects_new
     run_sql("SELECT * FROM projects WHERE project_status = 'new';")
 end
+

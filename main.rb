@@ -27,7 +27,9 @@ get '/' do
   }
 end
 
-
+get '/issues/new' do
+  erb :create_issue
+end
 
 
 
