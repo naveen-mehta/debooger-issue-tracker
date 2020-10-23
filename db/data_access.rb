@@ -80,3 +80,7 @@ end
 def delete_issue(id)
     run_sql("DELETE FROM issues WHERE issue_id = #{id};")
 end
+
+def delete_project(id)
+    run_sql("DELETE FROM projects WHERE project_id = #{id};")
+end
