@@ -32,8 +32,14 @@
                 <td> <%= project["project_owner"] %> </td>
                 <td> <%= project["submitted_by"] %> </td>
                 <td class="edit-icon"> <a class="fa fa-edit" href="/projects/<%= project["project_id"]%>/edit"></a> </td>
-            </tr>
+                <td>
+                    <form action="/projects/<%= project["project_id"] %>" method="post" class="delete-icon">    
+                        <input type="hidden" name="_method" value="delete">
+                        <button class="fa fa-trash"></button>
+                    </form>
+                </td>
 
+            </tr>
         <% end %>
 
       </tbody>
