@@ -3,6 +3,13 @@ require 'sinatra/reloader'
 require 'PG'
 require 'pry'
 require_relative 'db/data_access.rb'
+require 'bcrypt'
+
+enable :sessions
+
+get '/login' do
+  erb :login
+end
 
 get '/' do
   all_projects = fetch_all_projects()
@@ -85,3 +92,19 @@ delete '/projects/:id' do
   redirect '/projects'
 end
 
+# login
+
+get '/login' do
+  erb :login
+end
+
+post '/sessions' do  
+  user = find_user_by_email(params['email'])
+  if BCrypt::Password.new(user['password_digest']) == params['password']
+    # single source of truths
+    session[:user_id] = user['user_id']
+    redirect "/"
+  else
+    erb :login
+  end
+end

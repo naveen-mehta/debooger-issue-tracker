@@ -38,4 +38,13 @@ INSERT INTO projects (project_name, project_description, project_status, project
 
 INSERT INTO issues (issue_name, issue_description, submitted_by, project_id, issue_status) VALUES ('Dashboard page updates', 'Page should display 1. Projects summary - total, open, completed. 2. Issues summary - submitted, unassigned, closed, in progress', 'Naveen M', 1, 'new');
 
+CREATE TYPE user_roles AS ENUM ('project_manager', 'developer', 'tester', 'admin', 'demo_user');
 
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    password_digest VARCHAR(200) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    user_role user_roles,
+    user_job_title VARCHAR(200) NOT NULL,
+    created timestamp default current_timestamp
+);

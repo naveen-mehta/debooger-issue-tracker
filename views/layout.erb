@@ -14,7 +14,6 @@
       <li class="nav-links"><a class="logout-btn" href="#">Log out</a></li>
       <li class="nav-links"><a class="nav-add-proj-btn" href="/projects/new">Add Project</a></li>
       <li class="nav-links"><a class="nav-add-issue-btn" href="/issues/new">Add Issue</a></li>
-
     </ul>
   </header>
   
@@ -23,6 +22,7 @@
     <a href="/projects"><i class="fa fa-fw fa-code"></i> Projects</a>
     <a href="/issues"><i class="fa fa-fw fa-bug"></i> Issues</a>
     <a href=""><i class="fa fa-fw fa-users"></i> Users</a>
+    <h1><%= session[:user_id] %></h1>
   </div>
 
   <%= yield %>
