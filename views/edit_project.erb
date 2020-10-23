@@ -1,12 +1,13 @@
 <div class="project-form">
     <form action="/projects/<%= project["project_id"] %>" method="post">
+        <input type="hidden" name="_method" value="patch">
         <h1 class="form-heading">Edit form - Project ID: <%= project["project_id"] %></h1>
         <fieldset>
             <legend><span class="number">1</span>Describe the project</legend>
             <label for="title">Project Name</label>
             <input type="text" id="title" name="project_title" value="<%= project["project_name"] %>">
             <label for="description">Description:</label>
-            <textarea id="description" name="project_description" value="<%= project["project_description"] %>"></textarea>
+            <textarea id="description" name="project_description"><%= project["project_description"] %></textarea>
             <label>Priority:</label>
             <input type="radio" id="low" value="low" name="project_priority"><label for="low" class="light">Low</label><br/>
             <input type="radio" id="medium" value="medium" name="project_priority"><label for="medium" class="light">Medium</label><br/>

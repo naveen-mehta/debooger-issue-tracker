@@ -17,6 +17,7 @@
           <th>Status</th>
           <th>Owner</th>
           <th>Submitter</th>
+          <th>Modify</th>
         </tr>
       </thead>
       <tbody>
@@ -30,6 +31,7 @@
                 <td> <%= project["project_status"] %> </td>
                 <td> <%= project["project_owner"] %> </td>
                 <td> <%= project["submitted_by"] %> </td>
+                <td> <a class="fa fa-edit" href="/projects/<%= project["project_id"]%>/edit"></a> </td>
             </tr>
 
         <% end %>
