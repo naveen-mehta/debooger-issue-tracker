@@ -60,3 +60,15 @@ def update_issue(id, title, description, project_id, status, submitted_by)
         WHERE issue_id = #{id};"
     )
 end
+
+def update_project(id, title, description, owner, status, submitted_by)
+    run_sql (
+    "UPDATE projects
+        SET project_name = '#{title}',
+            project_description = '#{description}',
+            project_owner = '#{owner}',
+            project_status = '#{status}',
+            submitted_by = '#{submitted_by}'
+        WHERE project_id = #{id};"
+    )
+end
