@@ -16,10 +16,22 @@
         <fieldset>
             <legend><span class="number">2</span> Additional information</legend>
             <label for="status">Status:</label>
-            <select id="status" name="issue_status" value="<% issue["issue_status"] %>">
-                <option value="new">New</option>
-                <option value="in-progress">In Progress</option>
-                <option value="closed">Closed</option>
+            <select id="status" name="issue_status">
+            
+                <% if issue["issue_status"] == "new" %>
+                    <option value="new">New</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="closed">Closed</option>
+                <% elsif issue["issue_status"] == "in-progress" %>
+                    <option value="in-progress">In Progress</option>
+                    <option value="new">New</option>
+                    <option value="closed">Closed</option>
+                <% else %>
+                    <option value="closed">Closed</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="new">New</option>
+                <% end %>
+
             </select>
             <label for="id">Provide the Project ID to link the issue:</label>
             <input type="number" id="id" name="project_id" value="<%= issue["project_id"] %>">
