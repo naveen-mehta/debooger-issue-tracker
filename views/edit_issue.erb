@@ -1,7 +1,7 @@
 <div class="issue-form">
-    <form action="/issues/:<%= issue["issue_id"] %>" method="post">
+    <form action="/issues/<%= issue["issue_id"] %>" method="post">
         <input type="hidden" name="_method" value="patch">
-        <h1 class="form-heading">Create a new issue</h1>
+        <h1 class="form-heading">Edit form - Issue ID: <%= issue["issue_id"] %></h1>
         <fieldset>
             <legend><span class="number">1</span>Describe the issue</legend>
             <label for="title">Title:</label>

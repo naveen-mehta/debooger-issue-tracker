@@ -44,3 +44,19 @@ end
 def create_new_project(title, description, status, owner, submitted_by)
     run_sql("INSERT INTO projects (project_name, project_description, project_status, project_owner, submitted_by) VALUES ('#{title}', '#{description}', '#{status}', '#{owner}', '#{submitted_by}');")
 end
+
+def fetch_issue_edit(id)
+    run_sql("SELECT * FROM issues WHERE issue_id = #{id}")
+end
+
+def update_issue(id, title, description, project_id, status, submitted_by)
+    run_sql (
+    "UPDATE issues
+        SET issue_name = '#{title}',
+            issue_description = '#{description}',
+            project_id = #{project_id},
+            issue_status = '#{status}',
+            submitted_by = '#{submitted_by}'
+        WHERE issue_id = #{id};"
+    )
+end

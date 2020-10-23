@@ -41,6 +41,11 @@ get '/issues' do
   erb :all_issues, locals: { all_issues: all_issues }
 end
 
+get '/issues/:id/edit' do
+  issue = fetch_issue_edit(params["id"])
+  erb :edit_issue, locals: { issue: issue[0] }
+end
+
 get '/projects/new' do
   erb :create_project
 end
@@ -53,4 +58,9 @@ end
 post '/projects' do
   create_new_project(params["project_title"], params["project_description"], params["project_status"], params["project_owner"], params["submitted_by"])
   redirect '/projects'
+end
+
+patch '/issues/:id' do
+  update_issue(params["id"], params["issue_title"], params["issue_description"], params["project_id"], params["issue_status"], params["submitted_by"])
+  redirect '/issues'
 end

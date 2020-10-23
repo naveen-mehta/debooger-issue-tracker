@@ -17,6 +17,7 @@
           <th>Status</th>
           <th>Project ID</th>
           <th>Submitter</th>
+          <th>Modify</th>
         </tr>
       </thead>
       <tbody>
@@ -30,6 +31,7 @@
                 <td> <%= issue["issue_status"] %> </td>
                 <td> <%= issue["project_id"] %> </td>
                 <td> <%= issue["submitted_by"] %> </td>
+                <td> <a class="fa fa-edit" href="/issues/<%= issue["issue_id"]%>/edit"></a> </td>
             </tr>
 
         <% end %>
