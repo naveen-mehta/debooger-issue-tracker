@@ -204,11 +204,21 @@ label.light {
 .table {
     margin-top: 100px;
     width: 95% !important;
+    border-collapse: separate !important;
 }
 
 .fixed-table-container {
     margin-left: 220px;
     /* margin-top: 100px; */
+}
+
+.delete-icon {
+    background: none;
+    padding: 0 0 0 10px;
+}
+
+.edit-icon {
+    padding-left: 21px !important;
 }
 
 /* Create project page */

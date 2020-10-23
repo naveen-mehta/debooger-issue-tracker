@@ -17,7 +17,8 @@
           <th>Status</th>
           <th>Project ID</th>
           <th>Submitter</th>
-          <th>Modify</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -31,7 +32,13 @@
                 <td> <%= issue["issue_status"] %> </td>
                 <td> <%= issue["project_id"] %> </td>
                 <td> <%= issue["submitted_by"] %> </td>
-                <td> <a class="fa fa-edit" href="/issues/<%= issue["issue_id"]%>/edit"></a> </td>
+                <td class="edit-icon"> <a class="fa fa-edit" href="/issues/<%= issue["issue_id"]%>/edit"></a> </td>
+                <td>
+                    <form action="/issues/<%= issue["issue_id"] %>" method="post" class="delete-icon">    
+                        <input type="hidden" name="_method" value="delete">
+                        <button class="fa fa-trash"></button>
+                    </form>
+                </td>
             </tr>
 
         <% end %>

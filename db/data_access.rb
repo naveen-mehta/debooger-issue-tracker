@@ -76,3 +76,7 @@ def update_project(id, title, description, owner, status, submitted_by)
         WHERE project_id = #{id};"
     )
 end
+
+def delete_issue(id)
+    run_sql("DELETE FROM issues WHERE issue_id = #{id};")
+end

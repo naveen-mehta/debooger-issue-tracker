@@ -51,6 +51,11 @@ patch '/issues/:id' do
   redirect '/issues'
 end
 
+delete '/issues/:id' do
+  delete_issue(params["id"])
+  redirect '/issues'
+end
+
 get '/projects/new' do
   erb :create_project
 end

@@ -31,7 +31,7 @@
                 <td> <%= project["project_status"] %> </td>
                 <td> <%= project["project_owner"] %> </td>
                 <td> <%= project["submitted_by"] %> </td>
-                <td> <a class="fa fa-edit" href="/projects/<%= project["project_id"]%>/edit"></a> </td>
+                <td class="edit-icon"> <a class="fa fa-edit" href="/projects/<%= project["project_id"]%>/edit"></a> </td>
             </tr>
 
         <% end %>
