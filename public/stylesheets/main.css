@@ -43,6 +43,13 @@ header {
     border-radius: 5px;
 }
 
+.sign-out {
+  background: bottom;
+  border: none;
+  padding-left: inherit;
+  color: navajowhite;
+}
+
 .nav-links a:hover {
     background-color: rgba(2, 23, 74, 0.646);
     color: whitesmoke;
@@ -93,6 +100,7 @@ header {
 
 .dashboard {
     padding: 100px 10px 10px 220px;
+    color: black !important;
 }
 
 /* Issues - new issue form */
@@ -241,12 +249,12 @@ label.light {
   height: 500px;
   width: 400px;
 	padding: 40px;
-	background: rgba(86, 139, 254, 0.4);
+	background: rgb(0 116 241);
 	box-sizing: border-box;
-	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	box-shadow: 0 38px 56px rgba(20,20,20,0.7);
 	border-radius: 10px;
 }
-.box h2 {
+.box h2, .box h3 {
 	margin: 0 0 30px;
 	padding: 0;
 	color: #FFF;
