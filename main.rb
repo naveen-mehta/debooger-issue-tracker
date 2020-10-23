@@ -80,3 +80,8 @@ patch '/projects/:id' do
   redirect '/projects'
 end
 
+delete '/projects/:id' do
+  delete_project(params["id"])
+  redirect '/projects'
+end
+
