@@ -14,6 +14,8 @@ CREATE TABLE projects (
     created timestamp default current_timestamp
 );
 
+ALTER TABLE projects ADD COLUMN submitted_by VARCHAR(100) NOT NULL;
+
 CREATE TABLE issues (
     issue_id SERIAL PRIMARY KEY,
     issue_name TEXT NOT NULL,
