@@ -7,35 +7,51 @@ require 'bcrypt'
 
 enable :sessions
 
+def logged_in?()
+  if session[:user_id]
+    true
+  else
+    false
+  end
+end
+
 get '/login' do
   erb :login
 end
 
 get '/' do
-  all_projects = fetch_all_projects()
-  new_projects = fetch_projects_new()
-  inprogress_projects = fetch_projects_inprogress()
-  closed_projects = fetch_projects_closed()
+  if logged_in?
+    all_projects = fetch_all_projects()
+    new_projects = fetch_projects_new()
+    inprogress_projects = fetch_projects_inprogress()
+    closed_projects = fetch_projects_closed()
 
-  all_issues = fetch_all_issues()
-  new_issues = fetch_issues_new()
-  inprogress_issues = fetch_issues_inprogress()
-  closed_issues = fetch_issues_closed()
+    all_issues = fetch_all_issues()
+    new_issues = fetch_issues_new()
+    inprogress_issues = fetch_issues_inprogress()
+    closed_issues = fetch_issues_closed()
 
-  erb :index, locals: {
-    all_projects: all_projects,
-    new_projects: new_projects,
-    inprogress_projects: inprogress_projects,
-    closed_projects: closed_projects,
-    all_issues: all_issues,
-    new_issues: new_issues,
-    inprogress_issues: inprogress_issues,
-    closed_issues: closed_issues
-  }
+    erb :index, locals: {
+      all_projects: all_projects,
+      new_projects: new_projects,
+      inprogress_projects: inprogress_projects,
+      closed_projects: closed_projects,
+      all_issues: all_issues,
+      new_issues: new_issues,
+      inprogress_issues: inprogress_issues,
+      closed_issues: closed_issues
+    }
+  else 
+    redirect '/login'
+  end 
 end
 
 get '/issues/new' do
-  erb :create_issue
+  if logged_in?
+    erb :create_issue
+  else 
+    redirect '/login'
+  end
 end
 
 post '/issues' do
@@ -44,13 +60,21 @@ post '/issues' do
 end
 
 get '/issues' do
-  all_issues = fetch_all_issues()
-  erb :all_issues, locals: { all_issues: all_issues }
+  if logged_in?
+    all_issues = fetch_all_issues()
+    erb :all_issues, locals: { all_issues: all_issues }
+  else 
+    redirect '/login'
+  end
 end
 
 get '/issues/:id/edit' do
-  issue = fetch_issue_edit(params["id"])
-  erb :edit_issue, locals: { issue: issue[0] }
+  if logged_in?
+    issue = fetch_issue_edit(params["id"])
+    erb :edit_issue, locals: { issue: issue[0] }
+  else 
+    redirect '/login'
+  end
 end
 
 patch '/issues/:id' do
@@ -64,12 +88,20 @@ delete '/issues/:id' do
 end
 
 get '/projects/new' do
-  erb :create_project
+  if logged_in?
+    erb :create_project
+  else
+    redirect '/login'
+  end
 end
 
 get '/projects' do
-  all_projects = fetch_all_projects()
-  erb :all_projects, locals: { all_projects: all_projects }
+  if logged_in?
+    all_projects = fetch_all_projects()
+    erb :all_projects, locals: { all_projects: all_projects }
+  else
+    redirect '/login' 
+  end 
 end
 
 post '/projects' do
@@ -78,8 +110,12 @@ post '/projects' do
 end
 
 get '/projects/:id/edit' do
-  project = fetch_project_edit(params["id"])
-  erb :edit_project, locals: { project: project[0] }
+  if logged_in?
+    project = fetch_project_edit(params["id"])
+    erb :edit_project, locals: { project: project[0] }
+  else
+    redirect '/login' 
+  end  
 end
 
 patch '/projects/:id' do
@@ -93,7 +129,6 @@ delete '/projects/:id' do
 end
 
 # login
-
 get '/login' do
   erb :login
 end
@@ -101,10 +136,15 @@ end
 post '/sessions' do  
   user = find_user_by_email(params['email'])
   if BCrypt::Password.new(user['password_digest']) == params['password']
-    # single source of truths
     session[:user_id] = user['user_id']
     redirect "/"
   else
     erb :login
   end
 end
+
+delete '/session' do
+  session[:user_id] = nil
+  redirect '/login'
+end
+
