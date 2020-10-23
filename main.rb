@@ -65,6 +65,11 @@ post '/projects' do
   redirect '/projects'
 end
 
+get '/projects/:id/edit' do
+  project = fetch_project_edit(params["id"])
+  erb :edit_project, locals: { project: project[0] }
+end
+
 patch '/projects/:id' do
   update_project(params["id"], params["project_title"], params["project_description"], params["project_owner"], params["project_status"], params["submitted_by"])
   redirect '/projects'
