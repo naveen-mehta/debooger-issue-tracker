@@ -1,7 +1,7 @@
 <%# New dashboard design %>
 
 <div class="dashboard">
-    <div>
+    <div class="projects-container">
         <h2>Projects: <%= all_projects.count %></h2>
         
         <div class="dashboard-grid">
@@ -41,7 +41,7 @@
         </div>
         
     </div>
-    <div>
+    <div class="issues-container">
         <h2>Issues: <%= all_issues.count %></h2>
         <div class="dashboard-grid">
             <h3>New: <%= new_issues.count %></h3>            

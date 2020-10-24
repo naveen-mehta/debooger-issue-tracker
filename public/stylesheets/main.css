@@ -79,7 +79,7 @@ header {
     width: 200px;
     position: fixed;
     left: 0;
-    background-color: rgba(11, 21, 169, 0.92);
+    background-color: rgb(0 116 241);
     overflow-x: hidden;
     padding-top: 70px;
 }
@@ -108,17 +108,25 @@ header {
   grid-template-columns: 1fr 1fr 1fr;  
 }
 
+.projects-container, .issues-container {
+  background: #e0e0e033;
+}
+
 .list-container {
   display: flex;
   flex-direction: column;
   max-height: 250px;
-  max-width: 300px;
+  max-width: 450px;
 }
 
 .list-contents {
   overflow-x: hidden;
   overflow-y: auto;
   flex: 1;
+  background:white;
+  color: #674a4e;
+  padding-left: 20px;
+  margin: 20px;
 }
 
 /* Issues - new issue form */
