@@ -61,6 +61,7 @@ header {
     color: whitesmoke !important;
     margin: 0.5% 1% 0.5% 99px;
     border-radius: 5px;
+    font-size: 15px;
 }
 
 .nav-add-issue-btn {
@@ -69,6 +70,7 @@ header {
     color: whitesmoke !important;
     margin: 0.5% 0% 0.5% 0.5%;
     border-radius: 5px;
+    font-size: 15px;
 }
 
 /* Sidebar */
@@ -87,7 +89,7 @@ header {
 .sidebar a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 17px;
     color: whitesmoke;
     display: block;
 }
@@ -138,7 +140,7 @@ header {
 }
 
 p {
-  font-size: 12px;
+  font-size: 13px;
   margin-top: -5px;
 }
 
@@ -254,10 +256,17 @@ label.light {
 
 /* All issues page */
 
+.fixed-table-toolbar {
+  position: fixed;
+  left: 229px;
+  z-index: 1;
+}
+
 .table {
-    margin-top: 100px;
     width: 95% !important;
     border-collapse: separate !important;
+    font-size: 13px;
+    margin-top: 55px;
 }
 
 .fixed-table-container {
