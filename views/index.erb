@@ -11,7 +11,6 @@
         </div>
 
         <div class="dashboard-grid">
-            
             <div class="list-container">
                 <div class="list-contents">
                     <% new_projects.each do |project| %>                    
@@ -21,24 +20,24 @@
                     <% end %>
                 </div>
             </div>
-            
-
-            <div>
-                <% inprogress_projects.each do |project| %>                    
-                    <h5> <%= project["project_name"] %></h5>
-                    <p> <%= project["project_owner"] %></p> 
-                    <p> <%= project["created"] %></p>  
-                <% end %>
+            <div class="list-container">
+                <div class="list-contents">
+                    <% inprogress_projects.each do |project| %>                    
+                        <h5> <%= project["project_name"] %></h5>
+                        <p> <%= project["project_owner"] %></p> 
+                        <p> <%= project["created"] %></p>                                
+                    <% end %>
+                </div>
             </div>
-
-            <div>
-                <% closed_projects.each do |project| %>                    
-                    <h5> <%= project["project_name"] %></h5>
-                    <p> <%= project["project_owner"] %></p> 
-                    <p> <%= project["created"] %></p>           
-                <% end %>
-            </div>
-            
+            <div class="list-container">
+                <div class="list-contents">
+                    <% closed_projects.each do |project| %>                    
+                        <h5> <%= project["project_name"] %></h5>
+                        <p> <%= project["project_owner"] %></p> 
+                        <p> <%= project["created"] %></p>                                
+                    <% end %>
+                </div>
+            </div>            
         </div>
         
     </div>
