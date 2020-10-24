@@ -1,82 +1,117 @@
 <%# New dashboard design %>
 
+require 'pry'
+
 <div class="dashboard">
     <div class="projects-container">
-        <h2>Projects: <%= all_projects.count %></h2>
+        <h3 class="dashboard-summary">Total Projects: <%= all_projects.count %></h3>
         
         <div class="dashboard-grid">
-            <h3>New: <%= new_projects.count %></h3>            
-            <h3>In progress: <%= inprogress_projects.count %> </h3>
-            <h3>Closed: <%= closed_projects.count %></h3>
+            <h5 class="dashboard-summary">NEW: <%= new_projects.count %></h5>            
+            <h5 class="dashboard-summary">IN PROGRESS: <%= inprogress_projects.count %> </h5>
+            <h5 class="dashboard-summary">CLOSED: <%= closed_projects.count %></h5>
         </div>
 
         <div class="dashboard-grid">
             <div class="list-container">
                 <div class="list-contents">
                     <% new_projects.each do |project| %>                    
-                        <h5> <%= project["project_name"] %></h5>
-                        <p> <%= project["project_owner"] %></p> 
-                        <p> <%= project["created"] %></p>                                
+                        <% new_issue_counter = 0 %>
+                        <% inprogress_issue_counter = 0 %>
+                        <% closed_issue_counter = 0 %>
+                        <% new_issues.each do |issue| %>   
+                            <% if issue["project_id"] == project["project_id"] %>
+                                <% new_issue_counter+=1 %>
+                            <% end %>     
+                        <% end %> 
+                        <% inprogress_issues.each do |issue| %>   
+                            <% if issue["project_id"] == project["project_id"] %>
+                                <% inprogress_issue_counter+=1 %>
+                            <% end %>     
+                        <% end %> 
+                        <% closed_issues.each do |issue| %>   
+                            <% if issue["project_id"] == project["project_id"] %>
+                                <% closed_issue_counter+=1 %>
+                            <% end %>     
+                        <% end %> 
+                        <div class="list-contents-innerbox">
+                            <h5> <%= project["project_name"] %> </h5>
+                            <p> Owner: <%= project["project_owner"] %> </p> 
+                            <p> Created: <%= project["date_created"] %> </p>
+                            <p> New issues: <%= new_issue_counter %> </p>
+                            <p> In progress issues: <%= inprogress_issue_counter %> </p>
+                            <p> Closed issues: <%= closed_issue_counter %> </p>                                
+                        </div>
                     <% end %>
                 </div>
             </div>
+
             <div class="list-container">
                 <div class="list-contents">
                     <% inprogress_projects.each do |project| %>                    
-                        <h5> <%= project["project_name"] %></h5>
-                        <p> <%= project["project_owner"] %></p> 
-                        <p> <%= project["created"] %></p>                                
+                        <% new_issue_counter = 0 %>
+                        <% inprogress_issue_counter = 0 %>
+                        <% closed_issue_counter = 0 %>
+                        <% new_issues.each do |issue| %>   
+                            <% if issue["project_id"] == project["project_id"] %>
+                                <% new_issue_counter+=1 %>
+                            <% end %>     
+                        <% end %> 
+                        <% inprogress_issues.each do |issue| %>   
+                            <% if issue["project_id"] == project["project_id"] %>
+                                <% inprogress_issue_counter+=1 %>
+                            <% end %>     
+                        <% end %> 
+                        <% closed_issues.each do |issue| %>   
+                            <% if issue["project_id"] == project["project_id"] %>
+                                <% closed_issue_counter+=1 %>
+                            <% end %>     
+                        <% end %> 
+                        <div class="list-contents-innerbox">
+                            <h5> <%= project["project_name"] %> </h5>
+                            <p> Owner: <%= project["project_owner"] %> </p> 
+                            <p> Created: <%= project["date_created"] %> </p>
+                            <p> New issues: <%= new_issue_counter %> </p>
+                            <p> In progress issues: <%= inprogress_issue_counter %> </p>
+                            <p> Closed issues: <%= closed_issue_counter %> </p>                                
+                        </div>
                     <% end %>
                 </div>
             </div>
+
             <div class="list-container">
                 <div class="list-contents">
                     <% closed_projects.each do |project| %>                    
-                        <h5> <%= project["project_name"] %></h5>
-                        <p> <%= project["project_owner"] %></p> 
-                        <p> <%= project["created"] %></p>                                
+                        <% new_issue_counter = 0 %>
+                        <% inprogress_issue_counter = 0 %>
+                        <% closed_issue_counter = 0 %>
+                        <% new_issues.each do |issue| %>   
+                            <% if issue["project_id"] == project["project_id"] %>
+                                <% new_issue_counter+=1 %>
+                            <% end %>     
+                        <% end %> 
+                        <% inprogress_issues.each do |issue| %>   
+                            <% if issue["project_id"] == project["project_id"] %>
+                                <% inprogress_issue_counter+=1 %>
+                            <% end %>     
+                        <% end %> 
+                        <% closed_issues.each do |issue| %>   
+                            <% if issue["project_id"] == project["project_id"] %>
+                                <% closed_issue_counter+=1 %>
+                            <% end %>     
+                        <% end %> 
+                        <div class="list-contents-innerbox">
+                            <h5> <%= project["project_name"] %> </h5>
+                            <p> Owner: <%= project["project_owner"] %> </p> 
+                            <p> Created: <%= project["date_created"] %> </p>
+                            <p> New issues: <%= new_issue_counter %> </p>
+                            <p> In progress issues: <%= inprogress_issue_counter %> </p>
+                            <p> Closed issues: <%= closed_issue_counter %> </p>                                
+                        </div>
                     <% end %>
                 </div>
-            </div>            
-        </div>
-        
-    </div>
-    <div class="issues-container">
-        <h2>Issues: <%= all_issues.count %></h2>
-        <div class="dashboard-grid">
-            <h3>New: <%= new_issues.count %></h3>            
-            <h3>In progress: <%= inprogress_issues.count %> </h3>
-            <h3>Closed: <%= closed_issues.count %></h3>
-        </div>
-        <div class="dashboard-grid">
-            <div class="list-container">
-                <div class="list-contents">
-                    <% new_issues.each do |issue| %>                    
-                        <h5> <%= issue["issue_name"] %></h5>
-                        <p> <%= issue["submitted_by"] %></p> 
-                        <p> <%= issue["created"] %></p>                                
-                    <% end %>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="list-contents">
-                    <% inprogress_issues.each do |issue| %>                    
-                        <h5> <%= issue["issue_name"] %></h5>
-                        <p> <%= issue["submitted_by"] %></p> 
-                        <p> <%= issue["created"] %></p>                                
-                    <% end %>
-                </div>
-            </div>
-            <div class="list-container">
-                <div class="list-contents">
-                    <% closed_issues.each do |issue| %>                    
-                        <h5> <%= issue["issue_name"] %></h5>
-                        <p> <%= issue["submitted_by"] %></p> 
-                        <p> <%= issue["created"] %></p>                                
-                    <% end %>
-                </div>
-            </div>            
-        </div>
-    </div>
+            </div>    
+        </div>            
+    </div> 
 </div>
 
