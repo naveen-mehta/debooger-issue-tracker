@@ -42,15 +42,41 @@
         
     </div>
     <div>
-        <h1>Issues</h1>
-        <h3>Total issues: <%= all_issues.count %> </h3>
-        
+        <h2>Issues: <%= all_issues.count %></h2>
         <div class="dashboard-grid">
-            <h3>New: <%= new_issues.count %></h3>
-            <h3>In progress: <%= inprogress_issues.count %></h3>
+            <h3>New: <%= new_issues.count %></h3>            
+            <h3>In progress: <%= inprogress_issues.count %> </h3>
             <h3>Closed: <%= closed_issues.count %></h3>
         </div>
-
+        <div class="dashboard-grid">
+            <div class="list-container">
+                <div class="list-contents">
+                    <% new_issues.each do |issue| %>                    
+                        <h5> <%= issue["issue_name"] %></h5>
+                        <p> <%= issue["submitted_by"] %></p> 
+                        <p> <%= issue["created"] %></p>                                
+                    <% end %>
+                </div>
+            </div>
+            <div class="list-container">
+                <div class="list-contents">
+                    <% inprogress_issues.each do |issue| %>                    
+                        <h5> <%= issue["issue_name"] %></h5>
+                        <p> <%= issue["submitted_by"] %></p> 
+                        <p> <%= issue["created"] %></p>                                
+                    <% end %>
+                </div>
+            </div>
+            <div class="list-container">
+                <div class="list-contents">
+                    <% closed_issues.each do |issue| %>                    
+                        <h5> <%= issue["issue_name"] %></h5>
+                        <p> <%= issue["submitted_by"] %></p> 
+                        <p> <%= issue["created"] %></p>                                
+                    <% end %>
+                </div>
+            </div>            
+        </div>
     </div>
 </div>
 
