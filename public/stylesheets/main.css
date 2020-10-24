@@ -96,11 +96,29 @@ header {
     color: #8f8b8b;
 }
 
-/* Dashboard */
+/* Dashboard Page */
 
 .dashboard {
     padding: 100px 10px 10px 220px;
     color: black !important;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 250px;
+  max-width: 300px;
+}
+
+.list-contents {
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
 }
 
 /* Issues - new issue form */

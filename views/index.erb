@@ -1,19 +1,57 @@
+<%# New dashboard design %>
+
 <div class="dashboard">
     <div>
-        <h1>Project Summary</h1>
-        <h3>Total projects: <%= all_projects.count %> </h3>
-        <h3>New: <%= new_projects.count %></h3>
-        <h3>In progress: <%= inprogress_projects.count %> </h3>
-        <h3>Closed: <%= closed_projects.count %></h3>
+        <h2>Projects: <%= all_projects.count %></h2>
+        
+        <div class="dashboard-grid">
+            <h3>New: <%= new_projects.count %></h3>            
+            <h3>In progress: <%= inprogress_projects.count %> </h3>
+            <h3>Closed: <%= closed_projects.count %></h3>
+        </div>
+
+        <div class="dashboard-grid">
+            
+            <div class="list-container">
+                <div class="list-contents">
+                    <% new_projects.each do |project| %>                    
+                        <h5> <%= project["project_name"] %></h5>
+                        <p> <%= project["project_owner"] %></p> 
+                        <p> <%= project["created"] %></p>                                
+                    <% end %>
+                </div>
+            </div>
+            
+
+            <div>
+                <% inprogress_projects.each do |project| %>                    
+                    <h5> <%= project["project_name"] %></h5>
+                    <p> <%= project["project_owner"] %></p> 
+                    <p> <%= project["created"] %></p>  
+                <% end %>
+            </div>
+
+            <div>
+                <% closed_projects.each do |project| %>                    
+                    <h5> <%= project["project_name"] %></h5>
+                    <p> <%= project["project_owner"] %></p> 
+                    <p> <%= project["created"] %></p>           
+                <% end %>
+            </div>
+            
+        </div>
+        
     </div>
     <div>
-        <h1>Issue Summary</h1>
+        <h1>Issues</h1>
         <h3>Total issues: <%= all_issues.count %> </h3>
-        <h3>New: <%= new_issues.count %></h3>
-        <h3>In progress: <%= inprogress_issues.count %></h3>
-        <h3>Closed: <%= closed_issues.count %></h3>
+        
+        <div class="dashboard-grid">
+            <h3>New: <%= new_issues.count %></h3>
+            <h3>In progress: <%= inprogress_issues.count %></h3>
+            <h3>Closed: <%= closed_issues.count %></h3>
+        </div>
+
     </div>
 </div>
-
-
 
