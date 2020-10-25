@@ -14,12 +14,20 @@ def logged_in?()
   end
 end
 
+def demo_user?()
+  if session[:user_role]
+    true 
+  else 
+    false
+  end
+end
+
 get '/login' do
   erb :login
 end
 
 get '/' do
-  if logged_in?
+  if logged_in? || demo_user?
     all_projects = fetch_all_projects()
     new_projects = fetch_projects_new()
     inprogress_projects = fetch_projects_inprogress()
@@ -46,20 +54,24 @@ get '/' do
 end
 
 get '/issues/new' do
-  if logged_in?
+  if logged_in? || demo_user?
     erb :create_issue
-  else 
+  else
     redirect '/login'
   end
 end
 
 post '/issues' do
-  create_new_issue(params["issue_title"], params["issue_description"], params["project_id"], params["issue_status"], params["submitted_by"])
-  redirect '/issues'
+  if logged_in?
+    create_new_issue(params["issue_title"], params["issue_description"], params["project_id"], params["issue_status"], params["submitted_by"])
+    redirect '/issues'
+  else 
+    erb :demo_restrict
+  end
 end
 
 get '/issues' do
-  if logged_in?
+  if logged_in? || demo_user?
     all_issues = fetch_all_issues()
     erb :all_issues, locals: { all_issues: all_issues }
   else 
@@ -68,7 +80,7 @@ get '/issues' do
 end
 
 get '/issues/:id/edit' do
-  if logged_in?
+  if logged_in? || demo_user?
     issue = fetch_issue_edit(params["id"])
     erb :edit_issue, locals: { issue: issue[0] }
   else 
@@ -77,17 +89,25 @@ get '/issues/:id/edit' do
 end
 
 patch '/issues/:id' do
-  update_issue(params["id"], params["issue_title"], params["issue_description"], params["project_id"], params["issue_status"], params["submitted_by"])
-  redirect '/issues'
+  if logged_in?
+    update_issue(params["id"], params["issue_title"], params["issue_description"], params["project_id"], params["issue_status"], params["submitted_by"])
+    redirect '/issues'
+  else demo_user?
+    erb :demo_restrict
+  end
 end
 
 delete '/issues/:id' do
-  delete_issue(params["id"])
-  redirect '/issues'
+  if logged_in?
+    delete_issue(params["id"])
+    redirect '/issues'
+  else
+    erb :demo_restrict
+  end 
 end
 
 get '/projects/new' do
-  if logged_in?
+  if logged_in? || demo_user?
     erb :create_project
   else
     redirect '/login'
@@ -95,7 +115,7 @@ get '/projects/new' do
 end
 
 get '/projects' do
-  if logged_in?
+  if logged_in? || demo_user?
     all_projects = fetch_all_projects()
     erb :all_projects, locals: { all_projects: all_projects }
   else
@@ -104,12 +124,16 @@ get '/projects' do
 end
 
 post '/projects' do
-  create_new_project(params["project_title"], params["project_description"], params["project_status"], params["project_owner"], params["submitted_by"])
-  redirect '/projects'
+  if logged_in?
+    create_new_project(params["project_title"], params["project_description"], params["project_status"], params["project_owner"], params["submitted_by"])
+    redirect '/projects'
+  else
+    erb :demo_restrict
+  end
 end
 
 get '/projects/:id/edit' do
-  if logged_in?
+  if logged_in? || demo_user?
     project = fetch_project_by_id(params["id"])
     erb :edit_project, locals: { project: project[0] }
   else
@@ -118,13 +142,21 @@ get '/projects/:id/edit' do
 end
 
 patch '/projects/:id' do
-  update_project(params["id"], params["project_title"], params["project_description"], params["project_owner"], params["project_status"], params["submitted_by"])
-  redirect '/projects'
+  if logged_in? 
+    update_project(params["id"], params["project_title"], params["project_description"], params["project_owner"], params["project_status"], params["submitted_by"])
+    redirect '/projects'
+  else 
+    erb :demo_restrict
+  end
 end
 
 delete '/projects/:id' do
-  delete_project(params["id"])
-  redirect '/projects'
+  if logged_in?
+    delete_project(params["id"])
+    redirect '/projects'
+  else 
+    erb :demo_restrict
+  end
 end
 
 # login
@@ -144,14 +176,14 @@ end
 
 delete '/session' do
   session[:user_id] = nil
+  session[:user_role] = nil
   redirect '/login'
 end
 
 get '/projects/:id' do
-  if logged_in?
+  if logged_in? || demo_user?
     project = fetch_project_by_id(params['id'])
     issues = fetch_issue_by_projectID(params['id'])
-
     erb :project_details, locals: {
       project: project[0],
       issues: issues
@@ -162,10 +194,15 @@ get '/projects/:id' do
 end
 
 get '/users' do
-  if logged_in?
+  if logged_in? || demo_user?
     all_users = fetch_all_users()
     erb :users, locals: { users: all_users }
   else
     redirect '/login' 
   end 
+end
+
+post '/sessions/demo' do  
+  session[:user_role] = 'Demo'
+  redirect '/'
 end

@@ -19,6 +19,7 @@ ALTER TABLE projects ADD COLUMN date_created DATE DEFAULT NOW();
 ALTER TABLE projects ALTER COLUMN date_created DATE DEFAULT NOW();
 ALTER TABLE projects DROP COLUMN date_created;
 
+
 CREATE TABLE issues (
     issue_id SERIAL PRIMARY KEY,
     issue_name TEXT NOT NULL,

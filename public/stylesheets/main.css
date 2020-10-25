@@ -38,40 +38,44 @@ header {
 .logout-btn {
     float: right;
     background: #ff9a03;
-    color: whitesmoke !important;
+    color: white !important;
     margin: 0.5% 5.5% 0.5% 0%;
     border-radius: 5px;
     padding: 5px;
+    box-shadow: 0 38px 56px rgba(20,20,20,0.3);
+    cursor: pointer;
 }
 
 .sign-out {
   background: bottom;
   border: none;
   padding-left: inherit;
-  color: whitesmoke;
+  color: white;
 }
 
 .nav-links a:hover {
     background-color: rgba(2, 23, 74, 0.646);
-    color: whitesmoke;
+    color: white;
 }
 
 .nav-add-proj-btn {
     float: left;
     background:#4bc970;
-    color: whitesmoke !important;
+    color: white !important;
     margin: 0.5% 1% 0.5% 99px;
     border-radius: 5px;
     font-size: 15px;
+    box-shadow: 0 38px 56px rgba(20,20,20,0.3);
 }
 
 .nav-add-issue-btn {
     float: left;
     background:#4bc970;
-    color: whitesmoke !important;
+    color: white !important;
     margin: 0.5% 0% 0.5% 0.5%;
     border-radius: 5px;
     font-size: 15px;
+    box-shadow: 0 38px 56px rgba(20,20,20,0.3);
 }
 
 .nav-links-login-msg {
@@ -99,7 +103,7 @@ header {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 17px;
-    color: whitesmoke;
+    color: white;
     display: block;
 }
 
@@ -175,7 +179,7 @@ form {
   max-width: 200px;
   margin: 10px 0 0 220px;
   padding: 10px 50px 10px 10px;
-  background: whitesmoke;
+  background: white;
   border-radius: 8px;
 }
 
@@ -341,12 +345,16 @@ h1.fa.fa-bug {
 }
 
 .login-page-body {
-  background: rgb(238 245 255);
-  color: whitesmoke;
+  background: white;
+  color: white;
 }
 
 .login-form {
   margin: 40px 0;
+}
+
+.demo-login {
+  margin: 10px 0 40px 0;
 }
 
 .box {
@@ -354,8 +362,8 @@ h1.fa.fa-bug {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-  height: 500px;
-  width: 400px;
+  height: 640px;
+  width: 450px;
 	padding: 40px;
 	background: rgb(0 116 241);
 	box-sizing: border-box;
