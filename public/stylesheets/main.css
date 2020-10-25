@@ -138,6 +138,7 @@ header {
   background: #e0e0e058;
   margin: 21px 18px 5px 0;
   padding: 1px 0 1px 15px;
+  text-decoration: none !important;
 }
 
 p {
