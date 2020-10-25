@@ -4,9 +4,9 @@
         <fieldset>
             <legend><span class="number">1</span>Describe the project</legend>
             <label for="title">Project Name</label>
-            <input type="text" id="title" name="project_title">
+            <input type="text" id="title" name="project_title" required>
             <label for="description">Description:</label>
-            <textarea id="description" name="project_description"></textarea>
+            <textarea id="description" name="project_description" required></textarea>
             <label>Priority:</label>
             <input type="radio" id="low" value="low" name="project_priority"><label for="low" class="light">Low</label><br/>
             <input type="radio" id="medium" value="medium" name="project_priority"><label for="medium" class="light">Medium</label><br/>
@@ -21,9 +21,9 @@
                 <option value="closed">Closed</option>
             </select>
             <label for="id">Project Owner:</label>
-            <input type="text" id="id" name="project_owner">
+            <input type="text" id="id" name="project_owner" required>
             <label for="submitter">Submitted by:</label>
-            <input type="text" id="submitter" name="submitted_by">
+            <input type="text" id="submitter" name="submitted_by" required>
         </fieldset>
         <button type="submit" class="issueform-submitbtn">Submit</button>
     </form>
