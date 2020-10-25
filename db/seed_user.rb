@@ -4,7 +4,7 @@ require 'pg'
 require_relative 'data_access.rb'
 
 email = 'nm@ga.co'
-password_digest = BCrypt::Password.create('spitfire1')
+password_digest = BCrypt::Password.create('')
 
 # sql = "INSERT INTO users (email, password_digest) VALUES ('#{email}', '#{password_digest}');"
 

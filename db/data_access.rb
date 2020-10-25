@@ -61,7 +61,7 @@ def update_issue(id, title, description, project_id, status, submitted_by)
     )
 end
 
-def fetch_project_edit(id)
+def fetch_project_by_id(id)
     run_sql("SELECT * FROM projects WHERE project_id = #{id}")
 end
 

@@ -31,7 +31,7 @@ header {
     display: block;
     color: rgb(48, 47, 47);
     text-align: center;
-    padding: 9px 16px;
+    padding: 6px 12px;
     text-decoration: none;
 }
 
@@ -39,15 +39,16 @@ header {
     float: right;
     background: rgb(224 134 1);;
     color: whitesmoke !important;
-    margin: 0.5% 2% 0.5% 0%;
+    margin: 0.5% 5.5% 0.5% 0%;
     border-radius: 5px;
+    padding: 5px;
 }
 
 .sign-out {
   background: bottom;
   border: none;
   padding-left: inherit;
-  color: navajowhite;
+  color: whitesmoke;
 }
 
 .nav-links a:hover {
@@ -156,7 +157,7 @@ p {
 }
 
 form {
-  max-width: 300px;
+  max-width: 200px;
   margin: 10px auto;
   padding: 10px 50px 10px 20px;
   background: #f4f7f8;
@@ -170,7 +171,7 @@ textarea,
 select {
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  font-size: 16px;
+  font-size: 13px;
   height: auto;
   margin: 0;
   outline: 0;
@@ -194,7 +195,7 @@ select {
 }
 
 .issueform-submitbtn {
-  padding: 19px 39px 18px 39px;
+  padding: 5px 20px 5px 20px;
   color: #FFF;
   background-color: #4bc970;
   font-size: 18px;

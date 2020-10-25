@@ -111,7 +111,7 @@ end
 
 get '/projects/:id/edit' do
   if logged_in?
-    project = fetch_project_edit(params["id"])
+    project = fetch_project_by_id(params["id"])
     erb :edit_project, locals: { project: project[0] }
   else
     redirect '/login' 
@@ -146,5 +146,18 @@ end
 delete '/session' do
   session[:user_id] = nil
   redirect '/login'
+end
+
+get '/projects/:id' do
+  if logged_in?
+    project = fetch_project_by_id(params['id'])
+    issue = fetch_issue_by_projectID(params['id'])
+    erb :index, locals: {
+      project: project[0],
+      issue: issue[0]
+    }
+  else 
+    redirect '/login'
+  end 
 end
 

@@ -15,6 +15,9 @@ CREATE TABLE projects (
 );
 
 ALTER TABLE projects ADD COLUMN submitted_by VARCHAR(100) NOT NULL;
+ALTER TABLE projects ADD COLUMN date_created DATE DEFAULT NOW();
+ALTER TABLE projects ALTER COLUMN date_created DATE DEFAULT NOW();
+ALTER TABLE projects DROP COLUMN date_created;
 
 CREATE TABLE issues (
     issue_id SERIAL PRIMARY KEY,
