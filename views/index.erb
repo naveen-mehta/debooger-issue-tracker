@@ -3,9 +3,12 @@
         <h3 class="dashboard-summary">Total Projects: <%= all_projects.count %></h3>
         
         <div class="dashboard-grid">
-            <h5 class="dashboard-summary">NEW: <%= new_projects.count %></h5>            
-            <h5 class="dashboard-summary">IN PROGRESS: <%= inprogress_projects.count %> </h5>
-            <h5 class="dashboard-summary">CLOSED: <%= closed_projects.count %></h5>
+            <legend><span class="number dashboard-totals"><%= new_projects.count %></span>NEW</legend>
+            <legend><span class="number dashboard-totals"><%= inprogress_projects.count %></span>IN PROGRESS</legend>
+            <legend><span class="number dashboard-totals"><%= closed_projects.count %></span>CLOSED</legend>
+            <%# <h5 class="dashboard-summary">NEW: <%= new_projects.count </h5>            
+            <h5 class="dashboard-summary">IN PROGRESS: <%= inprogress_projects.count %> 
+            <%# <h5 class="dashboard-summary">CLOSED: <%= closed_projects.count %>
         </div>
 
         <div class="dashboard-grid">
