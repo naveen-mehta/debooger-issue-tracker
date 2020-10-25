@@ -2,7 +2,20 @@
 
 [Debooger](http://debooger.herokuapp.com/) is a web application designed to help teams record and track bugs in their software. This project was completed in 4 days (Design to Deployment).
 
+### LOGIN
 ![Login](/public/images/login.png)
+
+#### DASHBOARD
+![Dashboard](/public/images/dashboard.png)
+
+#### CREATE PROJECT
+![CreateProject](/public/images/create_form.png)
+
+#### PROJECT DETAILS
+![ProjectDetails](/public/images/project_details.png)
+
+#### PROJECT LIST
+![ProjectList](/public/images/project_list.png)
 
 ## Design 
 
