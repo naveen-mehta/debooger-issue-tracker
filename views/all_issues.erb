@@ -12,10 +12,10 @@
         <thead>
             <tr>
                 <th data-sortable="true" data-field="issue_id">Issue ID</th>
+                <th data-sortable="true">Project ID</th>
                 <th data-sortable="true">Title</th>
                 <th data-sortable="true">Description</th>
                 <th data-sortable="true">Status</th>
-                <th data-sortable="true">Project ID</th>
                 <th data-sortable="true">Submitted by</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -25,10 +25,10 @@
             <% all_issues.each do |issue| %>
                 <tr>
                     <td> <%= issue["issue_id"] %> </td>
+                    <td> <%= issue["project_id"] %> </td>
                     <td> <%= issue["issue_name"] %> </td>
                     <td> <%= issue["issue_description"] %> </td>
-                    <td> <%= issue["issue_status"] %> </td>
-                    <td> <%= issue["project_id"] %> </td>
+                    <td> <%= issue["issue_status"].capitalize %> </td>
                     <td> <%= issue["submitted_by"] %> </td>
                     <td class="edit-icon"> <a class="fa fa-edit" href="/issues/<%= issue["issue_id"]%>/edit"></a> </td>
                     <td>
