@@ -1,7 +1,8 @@
-## Introduction
+## Debooger
 
 Debooger is a web application designed to help teams record and track bugs in their software. This project was completed in 4 days (Design to Deployment).
 
+![Login](/public/images/login.png)
 
 ## Design 
 
