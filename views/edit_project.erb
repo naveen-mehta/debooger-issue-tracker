@@ -5,9 +5,9 @@
         <fieldset>
             <legend><span class="number">1</span>Describe the project</legend>
             <label for="title">Project Name</label>
-            <input type="text" id="title" name="project_title" value="<%= project["project_name"] %>">
+            <input type="text" id="title" name="project_title" value="<%= project["project_name"] %>" required>
             <label for="description">Description:</label>
-            <textarea id="description" name="project_description"><%= project["project_description"] %></textarea>
+            <textarea id="description" name="project_description" required><%= project["project_description"] %></textarea>
             <label>Priority:</label>
             <input type="radio" id="low" value="low" name="project_priority"><label for="low" class="light">Low</label><br/>
             <input type="radio" id="medium" value="medium" name="project_priority"><label for="medium" class="light">Medium</label><br/>
@@ -34,9 +34,9 @@
 
             </select>
             <label for="id">Project Owner:</label>
-            <input type="text" id="id" name="project_owner" value="<%= project["project_owner"] %>">
+            <input type="text" id="id" name="project_owner" value="<%= project["project_owner"] %>" required>
             <label for="submitter">Submitted by:</label>
-            <input type="text" id="submitter" name="submitted_by" value="<%= project["submitted_by"] %>">
+            <input type="text" id="submitter" name="submitted_by" value="<%= project["submitted_by"] %>" required>
         </fieldset>
         <button type="submit" class="issueform-submitbtn">Submit</button>
     </form>
