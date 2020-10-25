@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/reloader' if development?
 require 'PG'
 require 'pry'
 require_relative 'db/data_access.rb'
@@ -162,3 +162,11 @@ get '/projects/:id' do
   end 
 end
 
+get '/users' do
+  if logged_in?
+    all_users = fetch_all_users()
+    erb :users, locals: { users: all_users }
+  else
+    redirect '/login' 
+  end 
+end

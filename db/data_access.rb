@@ -1,5 +1,5 @@
 def run_sql(sql)
-    db = PG.connect(dbname: "debooger")
+    db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'debooger'})
     results = db.exec(sql)
     db.close
     return results 
@@ -93,3 +93,8 @@ end
 def fetch_issue_by_projectID(id)
     run_sql("SELECT * FROM issues WHERE project_id = #{id};")
 end
+
+def fetch_all_users()
+    run_sql("SELECT * FROM users;")
+end
+

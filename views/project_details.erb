@@ -14,7 +14,7 @@
         <p> <strong>Created:</strong> <%= project["date_created"] %> </p>
         <p> <strong>Project Status:</strong> <%= project["project_status"].capitalize %> </p>
     </div>
-    <input id="filter" type="text">
+    <hr>
     <h3 class="project-details-tickets-header">Issues for Project #<%= project['project_id'] %></h3>
     <table class="table" data-toggle="table" data-search="true" data-sort-name="issue_id">
         <thead>
@@ -24,7 +24,7 @@
                 <th data-sortable="true">Title</th>
                 <th data-sortable="true">Description</th>
                 <th data-sortable="true">Status</th>
-                <th data-sortable="true">Submitted by</th>
+                <th data-sortable="true">Assigned to</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>

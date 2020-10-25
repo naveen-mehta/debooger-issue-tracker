@@ -24,7 +24,7 @@ header {
 .logo {
     float: left;
     margin: 0.5% 0% 0.5% 0%;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .nav-links a {
@@ -103,7 +103,7 @@ header {
 
 .dashboard {
     padding: 100px 10px 10px 220px;
-    color: black !important;
+    color: rgba(0, 0, 0, 0.678);
 }
 
 .dashboard-grid {
@@ -129,7 +129,7 @@ header {
   overflow-y: auto;
   flex: 1;
   background:white;
-  color: #674a4e;
+  color: rgba(0, 0, 0, 0.678);
   padding-left: 20px;
   margin: 20px;
 }
@@ -139,6 +139,7 @@ header {
   margin: 21px 18px 5px 0;
   padding: 1px 0 1px 15px;
   text-decoration: none !important;
+  font-size: 14px;
 }
 
 p {
@@ -153,15 +154,20 @@ p {
 }
 
 /* Issues - new issue form */
+legend {
+  font-size: 1em !important;
+}
+
 .issue-form {
-    padding-top: 90px;
+    padding-top: 76px;
+
 }
 
 form {
   max-width: 200px;
-  margin: 10px auto;
-  padding: 10px 50px 10px 20px;
-  background: #f4f7f8;
+  margin: 10px 0 0 220px;
+  padding: 10px 50px 10px 10px;
+  background: whitesmoke;
   border-radius: 8px;
 }
 
@@ -179,7 +185,7 @@ select {
   padding: 15px;
   width: 100%;
   background-color: #e8eeef;
-  color: #8a97a0;
+  color: rgba(0, 0, 0, 0.678);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   margin-bottom: 20px;
 }
@@ -247,13 +253,14 @@ label.light {
 
 @media screen and (min-width: 480px) {
   form {
-    max-width: 1000px;
+    max-width: 650px;
   }
 }
 
 .form-heading {
     color: #505254;
     padding: 10px;
+    font-size: 1.3em;
 }
 
 /* All issues page */
@@ -278,23 +285,60 @@ label.light {
 
 .delete-icon {
     background: none;
-    padding: 0 0 0 10px;
+    padding: 0 0 0 4px;
+    margin: 10px;
 }
 
 .edit-icon {
     padding-left: 21px !important;
 }
 
+.view-details-icon {
+  padding-left: 23px !important;
+}
+
+.fa-arrow-circle-right, .fa-edit, .fa-trash {
+  text-decoration: none;
+  font-size: 18px !important;
+}
+
+.fa-trash {
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-size: 19px !important;
+  cursor: pointer;
+}
+
+.dashboard-project-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+}
+
 /* Create project page */
 
 .project-form {
-    padding-top: 90px;
+  padding-top: 76px;
 }
 
 /* Login page */
 
+.login-page-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 45px;
+}
+
+h1.fa.fa-bug {
+  font-size: 45px;
+}
+
 .login-page-body {
   background: rgb(238 245 255);
+  color: whitesmoke;
+}
+
+.login-form {
+  margin: 40px 0;
 }
 
 .box {
@@ -318,7 +362,8 @@ label.light {
 }
 
 .box .inputBox {
-	position: relative;
+  position: relative;
+  padding-top: 10px;
 }
 .box .inputBox input {
 	width: 100%;
@@ -385,8 +430,10 @@ label.light {
 .project-details-header {
   margin-left: 225px;
   padding-top: 85px;
+  margin-bottom: 50px;
 }
 
 .project-details-tickets-header {
   margin-left: 225px;
 }
+
