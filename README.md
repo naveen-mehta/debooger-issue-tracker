@@ -29,15 +29,18 @@ The web app provides the following features:
 
 ## Technologies used
 
-    - Javascript
-    - Ruby
-    - SQL
-    - Postgres
-    - HTML
-    - CSS 
-    - Sinatra
-    - Bcrypt
+- Javascript
+- Ruby
+- SQL
+- Postgres
+- HTML
+- CSS 
+- Sinatra
+- Bcrypt
 
-## Upcoming Features
+## Upcoming Features / Problems to be fixed
 
-    - Make the app responsive 
+- Make the app responsive 
+- Error handling when database returns an empty result and handling certain characters while saving forms
+
+
