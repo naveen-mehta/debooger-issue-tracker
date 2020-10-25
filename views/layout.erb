@@ -9,6 +9,7 @@
 </head>
 <body>
   <% if logged_in? %>
+    <% current_user = find_user_by_id(session['user_id']) %>
     <header>
       <ul class="navigation">
         <li class="nav-links logo"><a href="/" class="fa fa-bug">  <b>Debooger</b></a></li>
@@ -18,6 +19,7 @@
         </form>
         <li class="nav-links"><a class="nav-add-proj-btn" href="/projects/new">Add Project</a></li>
         <li class="nav-links"><a class="nav-add-issue-btn" href="/issues/new">Add Issue</a></li>
+        <li class="nav-links-login-msg"><span class="nav-login-message" href=""><b>Logged in as:</b> <%= current_user['user_role'].capitalize %> ( <%= current_user['email'] %> )</span></a></li>
       </ul>
     </header>
     

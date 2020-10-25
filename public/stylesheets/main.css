@@ -37,7 +37,7 @@ header {
 
 .logout-btn {
     float: right;
-    background: rgb(224 134 1);;
+    background: #ff9a03;
     color: whitesmoke !important;
     margin: 0.5% 5.5% 0.5% 0%;
     border-radius: 5px;
@@ -72,6 +72,14 @@ header {
     margin: 0.5% 0% 0.5% 0.5%;
     border-radius: 5px;
     font-size: 15px;
+}
+
+.nav-links-login-msg {
+  padding-top: 12px !important;
+}
+
+.nav-login-message {
+  margin-left: 410px;
 }
 
 /* Sidebar */

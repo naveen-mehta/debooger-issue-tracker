@@ -98,3 +98,7 @@ def fetch_all_users()
     run_sql("SELECT * FROM users;")
 end
 
+def find_user_by_id(id)
+    results = run_sql("SELECT * FROM users WHERE user_id = #{id};")
+    return results[0]
+end
