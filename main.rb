@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require 'PG'
-require 'pry'
+require 'pg'
 require_relative 'db/data_access.rb'
 require 'bcrypt'
 
