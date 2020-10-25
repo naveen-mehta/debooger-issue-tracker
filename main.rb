@@ -151,10 +151,11 @@ end
 get '/projects/:id' do
   if logged_in?
     project = fetch_project_by_id(params['id'])
-    issue = fetch_issue_by_projectID(params['id'])
-    erb :index, locals: {
+    issues = fetch_issue_by_projectID(params['id'])
+
+    erb :project_details, locals: {
       project: project[0],
-      issue: issue[0]
+      issues: issues
     }
   else 
     redirect '/login'

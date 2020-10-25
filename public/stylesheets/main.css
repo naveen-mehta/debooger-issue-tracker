@@ -378,3 +378,14 @@ label.light {
 		width: 80%;
 	}
 }
+
+/* Project details page */
+
+.project-details-header {
+  margin-left: 225px;
+  padding-top: 85px;
+}
+
+.project-details-tickets-header {
+  margin-left: 225px;
+}

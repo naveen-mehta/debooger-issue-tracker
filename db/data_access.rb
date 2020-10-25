@@ -90,3 +90,6 @@ def find_user_by_email(email)
     return results[0]
 end
 
+def fetch_issue_by_projectID(id)
+    run_sql("SELECT * FROM issues WHERE project_id = #{id};")
+end

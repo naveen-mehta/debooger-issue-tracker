@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/themes/bootstrap-table/bootstrap-table.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="project-details-header">
+        <h2>Project #<%= project['project_id'] %>: <%= project['project_name'] %></h2>
+        <p> <strong>Description:</strong> <%= project['project_description'] %></p>
+        <p> <strong>Project Owner:</strong> <%= project["project_owner"] %> </p> 
+        <p> <strong>Created:</strong> <%= project["date_created"] %> </p>
+        <p> <strong>Project Status:</strong> <%= project["project_status"].capitalize %> </p>
+    </div>
+    <input id="filter" type="text">
+    <h3 class="project-details-tickets-header">Tickets for Project #<%= project['project_id'] %></h3>
+    <table class="table" data-toggle="table" data-search="true" data-sort-name="issue_id">
+        <thead>
+            <tr>
+                <th data-sortable="true">Project ID</th>
+                <th data-sortable="true" data-field="issue_id">Issue ID</th>
+                <th data-sortable="true">Title</th>
+                <th data-sortable="true">Description</th>
+                <th data-sortable="true">Status</th>
+                <th data-sortable="true">Submitted by</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>  
+            <% issues.each do |issue| %>
+                <tr>
+                    <td> <%= issue["project_id"] %> </td>
+                    <td> <%= issue["issue_id"] %> </td>
+                    <td> <%= issue["issue_name"] %> </td>
+                    <td> <%= issue["issue_description"] %> </td>
+                    <td> <%= issue["issue_status"].capitalize %> </td>
+                    <td> <%= issue["submitted_by"] %> </td>
+                    <td class="edit-icon"> <a class="fa fa-edit" href="/issues/<%= issue["issue_id"]%>/edit"></a> </td>
+                    <td>
+                        <form action="/issues/<%= issue["issue_id"] %>" method="post" class="delete-icon">    
+                            <input type="hidden" name="_method" value="delete">
+                            <button class="fa fa-trash"></button>
+                        </form>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/themes/bootstrap-table/bootstrap-table.min.js"></script>
+</body>
